@@ -31,7 +31,7 @@ pipeline{
                     sh "docker commit \$(docker ps -f name=backend -q) ${env.user}/two-tier-app:latest"
                     sh "docker push ${env.user}/two-tier-app:latest"
                     sh "docker push ${env.user}/two-tier-db:latest"
-                    //sh "docker-compose down"
+                    sh "docker-compose down"
                     echo"Image Pushed"
                 }
             }
